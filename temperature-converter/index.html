@@ -10,9 +10,10 @@
         <div id="frame">
             <h1>Temperature converter</h1>
             <div id="content">
-                <input id="celsius" type="number" step="0.01" autofocus />
-                <label for="celsius">Celcius  = </label>
-                <input id="fahrenheit" type="number" step="0.01" />
+                <input id="celsius" type="number" step="0.01" autofocus oninput="cels()" />
+                <label for="celsius">Celcius&nbsp;= </label><!-- i have no idea why would you use label instead of div/span here -->
+                <!-- &nbsp; <- html entity that represents 'non braking space' ie i does not brake the line when size is changed -->
+                <input id="fahrenheit" type="number" step="0.01" oninput="fahr()" />
                 <label for="fahrenheit">Fahrenheit</label>
             </div>
         </div>
