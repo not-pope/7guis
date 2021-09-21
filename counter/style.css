@@ -63,6 +63,8 @@ button{
     color: var(--background-color);
     border: 1px solid var(--border-color);
     font-family: inherit;
+    font-weight: bold;
+    font-size: 20px;
     text-align: center;
     padding: 10px 20px;
     box-sizing: border-box;
