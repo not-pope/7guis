@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flight booker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="frame">
+            <h1>Flight booker</h1>
+            <div id="content">
+                <label for="type">One way or return :</label>
+                <select name="type" id="typeOfFlight">
+                    <option value="oneWayFlight" selected>one-way flight</option>
+                    <option value="returnFlight" >return flight </option>
+                </select>
+                <label for="departure">Departure Date (format: DD.MM.YYYY):</label>
+                <input name="departure" id="departureDate" type="text" oninput="check()" value="25.12.1999" />
+                <label for="return">Departure Date (format: DD.MM.YYYY):</label>
+                <input name="return" id="returnDate" type="text" oninput="check()" value="25.12.1999" disabled/>
+                <button type="submit"> BOOK </button>
+            </div>
+        </div>
+        <script src="./script.js" async defer></script>
+    </body>
+</html>
+
+<!-- combobox (select) with 2 options: -->
+<!--     one-way flight -->
+<!--     return flight -->
+<!-- 2 textfields representing the start & return date -->
+<!-- a button for submitting the flight -->
+<!-- textfield for return date only enabled if return flight is selected -->
+<!-- this one is really weird -->
