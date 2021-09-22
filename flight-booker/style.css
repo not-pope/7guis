@@ -37,9 +37,13 @@ body {
     margin: 0px;
     border: 1px solid var(--border-color);
     border-radius: 3px;
+    box-shadow: var(--shadow);
+    box-sizing: border-box;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     display: flex;
     flex-direction: column;
-    box-shadow: var(--shadow);
 }
 
 h1{
@@ -50,6 +54,7 @@ h1{
     font-size: 16px;
     text-align: center;
     font-weight: bolder;
+    user-select: none;
 }
 
 #content{
@@ -74,16 +79,11 @@ input, input:focus, input:active {
     font-style: inherit;
     font-size: 14px;
 }
-input:disabled{
-    background: transparent;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 8px 16px;
+.disabled,.disabled:focus{
     border: 1px solid var(--grey-border-color);
-    outline: none;
-    font-style: inherit;
-    font-size: 14px;
     color: var(--grey-text-color);
+    user-select: none;
+    outline:none;
 }
 
 label {

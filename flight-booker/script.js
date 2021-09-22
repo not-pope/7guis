@@ -1,32 +1,54 @@
-// you could create list (or object/dict) of these elems and somehow you don't
-// even need to reference that obj when accessin' them. like so
-// const elems = {
-//   celsius: document.querySelector("input#celsius"),
-//   fahrenheit: document.querySelector("input#fahrenheit"),
-// };
-// i though i need to use elems.celsius but sometimes you dont (apparently)
-// i though about wrting second version but its more or less the same thing
-// also, these two are the same:
-// const {value} = event.target;
-// const value = event.target.value;
-// also oninput you can create fn that passes an event, and you can access
-// event.target to see who called it and do some smart shit with it that way
+let typeOfFlight = document.getElementById("typeOfFlight");
+let inputDepartureDate = document.getElementById("departureDate");
+let inputReturnDate = document.getElementById("returnDate");
 
-let celsius = document.getElementById("celsius");
-let fahrenheit = document.getElementById("fahrenheit");
+const inputRegex = /^(\d{2})\.(\d{2})\.(\d{4})$/;
 
-
-const celsToFahr = (temp) => {
-    return (temp * 1.8 + 32);
-}
-const fahrToCels = (temp) => {
-    return ((temp-32) * 0.5555555555555556);
+let typeChanged = () => {
+    if(typeOfFlight.value==="returnFlight"){
+        inputReturnDate.classList.remove("disabled");
+        inputReturnDate.removeAttribute("disabled");
+    }else{
+        inputReturnDate.classList.add("disabled");
+        inputReturnDate.setAttribute("disabled","disabled");
+    }
+    // inputReturnDate.classList.toggle("disabled");
 }
 
-const cels = () => {
-    fahrenheit.value=celsToFahr(celsius.value).toFixed(2);
+let book = () => {
+    alert("Booked for: "+inputDepartureDate.value);
 }
 
-const fahr = () => {
-    celsius.value=fahrToCels(fahrenheit.value).toFixed(2);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    x and y coors of mouse click (relative to current viewport ie. page)
+    x
+    y
+
+    x and y coors of a mouse click (relative to a whole screen, yeah.. when clientY=0, screenY=0+(height of tabline, os-status-bar, bookmark bar..) )
+    screenX
+    screenY
+
+    x and y offsets of a mouse click from a padding edge of the target node
+    offsetX
+    offsetY
+
+    x and y coors of a mouse click in a whole page/document
+    pageX
+    pageY
+*/
